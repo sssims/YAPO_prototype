@@ -1,0 +1,4 @@
+Yet another organizer application, but with visual organization tools unlike other apps I've seen.
+
+This is a prototype.
+
