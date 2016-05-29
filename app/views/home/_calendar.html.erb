@@ -2,17 +2,21 @@
   <div id='calendar'>
     <div id='calendar-header'>
       <div id='calendar-header-title'>
-        <a>Calendar</a>
+        <a><%= @month %></a>
       </div>
     </div>
     <div id='calendar-dates'>
       <table id='calendar-dates-table'>
-        <% for i in 0...31 %>
-          <% if i % 7 == 0 %>
+        <tr>
+        <% for i in 0...@month_start_day %>
+          <td class='blank-cell'></td>
+        <% end %>
+        <% for i in @month_start_day...(@days_in_month + @month_start_day)%>
+          <% if i % 7 == 0 & i > 0 %>
             <tr>
           <% end %>
           <td>
-            <a><%= i + 1 %></a>
+            <a><%= i + 1 - @month_start_day %></a>
           </td>
           <% if i % 7 == 6 %>
             </tr>

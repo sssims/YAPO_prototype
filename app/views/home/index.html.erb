@@ -2,13 +2,19 @@
   <div id='home-left-nav' class='home-major-section'>
   </div>
   <div id='home-left-content' class='home-major-section'>
+    <div id='left-content-container' class='major-section-content'>
+      <%= render partial: "planner", layout: false %>
+    </div>
   </div>
   <div id='home-middle' class='home-major-section'>
-    <div id='middle-content-container'>
+    <div id='middle-content-container' class='major-section-content'>
       <%= render partial: "calendar", layout: false %>
     </div>
   </div>
   <div id='home-right-content' class='home-major-section'>
+    <div id='right-content-container' class='major-section-content'>
+      <%= render partial: "journal", layout: false %>
+    </div>
   </div>
   <div id='home-right-nav' class='home-major-section'>
   </div>

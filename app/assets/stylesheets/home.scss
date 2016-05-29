@@ -44,7 +44,11 @@
 
 // home middle section
 
-#middle-content-container {
+.home-major-section {
+  position: relative;
+}
+
+.major-section-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -57,6 +61,8 @@
   padding: 10px;
 
   background-color: #2F2E58;
+
+  width: 400px; //ToDo: update calendar CSS to be resizable
 }
 
 #calendar-header {
@@ -96,6 +102,25 @@
 
 }
 
+#calendar-dates-table > tbody > tr > td.blank-cell {
+  visibility: hidden;
+  border: none;
+}
+
 #calendar-dates-table > tbody > tr > td:hover {
   background-color: #DDDDDD;
+}
+
+#journal-entry {
+  height: 300px;
+  width: 200px;
+
+  background-color: #AAAAAA;
+}
+
+#planner-entry {
+  height: 300px;
+  width: 200px;
+
+  background-color: #AAAAAA;
 }
