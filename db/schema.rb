@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529022919) do
+ActiveRecord::Schema.define(version: 20160529195111) do
 
   create_table "journals", force: :cascade do |t|
     t.text     "title"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160529022919) do
     t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "salt"
   end
 
 end
