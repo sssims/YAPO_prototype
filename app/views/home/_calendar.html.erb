@@ -1,0 +1,24 @@
+<div id='calendar-page-container'>
+  <div id='calendar'>
+    <div id='calendar-header'>
+      <div id='calendar-header-title'>
+        <a>Calendar</a>
+      </div>
+    </div>
+    <div id='calendar-dates'>
+      <table id='calendar-dates-table'>
+        <% for i in 0...31 %>
+          <% if i % 7 == 0 %>
+            <tr>
+          <% end %>
+          <td>
+            <a><%= i + 1 %></a>
+          </td>
+          <% if i % 7 == 6 %>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

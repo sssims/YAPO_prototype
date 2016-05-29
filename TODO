@@ -1,0 +1,9 @@
+1. The Calender view, _calendar.html.erb, should be multipurpose.
+   - Make it resizable. Will require change/refactor of calendar CSS. In app/assets/stylesheets/home.scss. See view file for relevent element ids.
+      - Bottom corner grab style
+      - header and dates-area width ~= max width as per corner grab.
+      - header height ~= 10% width.
+      - date area height ~= 80% width. 
+      - date cells transform to match date area
+      - Calendar has minimum height and width?
+      
