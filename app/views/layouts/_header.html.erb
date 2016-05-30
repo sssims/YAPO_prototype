@@ -1,0 +1,18 @@
+<div id='nav-bar-container'>
+  <div id='nav-bar-content'>
+    <div id='nav-left-content' class='nav-content'>
+      <% if @current_user %>
+        <%= @current_user.username %>
+      <% end %>
+    </div>
+    <div id='nav-middle-content' class='nav-content'>
+    </div>
+    <div id='nav-right-content' class='nav-content'>
+      <% if @current_user %>
+        <%= link_to "Logout", :controller => 'users', :action => 'logout' %>
+      <% else %>
+        <%= link_to "Login", :controller => 'users', :action => 'login' %>
+      <% end %>
+    </div>
+  </div>
+</div>

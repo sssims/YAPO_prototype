@@ -18,3 +18,13 @@ html, body {
   height: 100%;
   margin: 0;
 }
+
+#nav-bar-content {
+  height: 20px;
+
+  background-color: #EEEEEE;
+}
+
+.nav-content {
+  display: inline-block;
+}

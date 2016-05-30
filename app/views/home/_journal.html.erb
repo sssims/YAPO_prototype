@@ -9,7 +9,11 @@
       </div>
     </div>
     <div id=journal-content'>
-      <a>content here</a>
+      <% if @journal %>
+        <a><%= @journal.content %></a>
+      <% else %>
+        <a>blank journal</a>
+      <% end %>
     </div>
   </div>
 </div>

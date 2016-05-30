@@ -4,7 +4,6 @@ General:
   - Code from tutorials or copy pasta'd - must be understood and reworked according to convention.
     - All user code
     - All session code  
-  - UNIT TESTING !!!
 
 Convention:
   - Design Documents
@@ -18,3 +17,10 @@ Controllers:
 
 Views:
   -
+
+Tests:
+  - Add unit tests to app
+
+Security:
+  - Protect session
+  - ?? - Learn more about security
