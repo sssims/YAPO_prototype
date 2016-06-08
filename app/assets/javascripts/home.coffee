@@ -4,3 +4,9 @@
 
 $(document).on "click", "#calendar-dates-table > tbody > tr > td", ->
   alert("Received")
+
+#$(document).on "click", "#calendar-dates-table > tbody > tr > td", ->
+#  $.ajax
+#    url: ""
+#    datatype: ""
+#    success: 

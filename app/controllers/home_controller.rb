@@ -4,15 +4,19 @@ class HomeController < ApplicationController
 
   def index
 
-    today = Date.today
+    @today = Date.today
 
-    @month = today.strftime("%B")
-    @month_start_day = Date.new(today.year, today.month, 1).wday
-    @days_in_month   = Date.new(today.year, today.month, -1).day 
+    @month = @today.strftime("%B")
+    @month_start_day = Date.new(@today.year, @today.month, 1).wday
+    @days_in_month   = Date.new(@today.year, @today.month, -1).day 
 
     #Journal.new(title: 'Good day', tags: '{}', content: 'Today was great. I had such a great time', user_id: 3, year: today.year, month: today.month, day: today.day).save
 
-    @journal = get_journal(today.year, today.month, today.day)
+    @journal = get_journal(@today.year, @today.month, @today.day)
+
+    if @journal == nil
+      @journal = Journal.new
+    end
 
   end
 
@@ -28,10 +32,12 @@ class HomeController < ApplicationController
 
   end
 
-  def update_journal
+  def update_date
   
-    
-  
+    @today = Date.new(2004, 5, 10)
+
+    head :ok
+
   end
 
 end

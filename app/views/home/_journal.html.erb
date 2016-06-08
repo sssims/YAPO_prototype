@@ -1,18 +1,13 @@
 <div id='journal-page-container'>
   <div id='journal-entry'>
-    <div id='journal-header'>
-      <div id='journal-title'>
-        <a>title here</a>
-      </div>
-      <div id='journal-date'>
-        <a>date here</a>
-      </div>
-    </div>
     <div id=journal-content'>
-      <% if @journal %>
-        <a><%= @journal.content %></a>
-      <% else %>
-        <a>blank journal</a>
+      <%= form_for(@journal, url: {controller: 'journals', action: 'create_or_update'}) do |f| %>
+        <%= f.text_field :title %>
+        <%= f.text_field :year, :value => @today.year, :readonly => true %>
+        <%= f.text_field :month, :value => @today.month, :readonly => true %>
+        <%= f.text_field :day, :value => @today.day, :readonly => true  %>
+        <%= f.text_area  :content, :value => @journal.content %>
+        <%= f.submit %>
       <% end %>
     </div>
   </div>
