@@ -3,10 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "click", "#calendar-dates-table > tbody > tr > td", ->
-  alert("Received")
+  alert($(this).attr('id'))
 
 #$(document).on "click", "#calendar-dates-table > tbody > tr > td", ->
-#  $.ajax
+#  $.ajax '/',
+#    type: 'GET'
+#    dataType: 'html'
 #    url: ""
 #    datatype: ""
 #    success: 

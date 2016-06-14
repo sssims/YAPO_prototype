@@ -15,7 +15,7 @@
           <% if i % 7 == 0 & i > 0 %>
             <tr>
           <% end %>
-          <td>
+          <td id='<%= @today.year.to_s + '-' + @today.month.to_s + '-' + (i + 1 - @month_start_day).to_s %>'>
             <a><%= i + 1 - @month_start_day %></a>
           </td>
           <% if i % 7 == 6 %>

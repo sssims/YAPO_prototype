@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get  'logout' => 'users#logout'
 
   patch 'create_or_update' => 'journals#create_or_update'
+  post  'create_or_update' => 'journals#create_or_update'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

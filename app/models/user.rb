@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true, :format => EMAIL_REGEX, :allow_blank => true
   validates :password, :confirmation => true
 
-  validates_length_of :password, :in => 6..20, :on => :create
+  validates_length_of :password, :in => 4..20, :on => :create
   validates_uniqueness_of :username, :case_sensitive => false
 
   def encrypt_password
