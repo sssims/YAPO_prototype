@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   patch 'create_or_update' => 'journals#create_or_update'
   post  'create_or_update' => 'journals#create_or_update'
 
+  get   'update_date' => 'home#update_date'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

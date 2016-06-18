@@ -4,7 +4,7 @@ class JournalsController < ApplicationController
 
     if @current_user == nil
       # ERR
-      redirect_to :controller => 'home', :action => 'index'
+      redirect_to :controller => 'user', :action => 'login'
       return
     end
 
@@ -17,9 +17,12 @@ class JournalsController < ApplicationController
     current_entry.title = curr_j[:title]
     current_entry.content = curr_j[:content] 
   
-    current_entry.save
-
+    if !current_entry.save
+      binding.pry
+    end
+  
     redirect_to :controller => 'home', :action => 'index'
+
   end
 
 end

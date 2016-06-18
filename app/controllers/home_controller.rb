@@ -33,10 +33,22 @@ class HomeController < ApplicationController
   end
 
   def update_date
-  
-    @today = Date.new(2004, 5, 10)
 
-    head :ok
+    calendar_dates = params[:calendar_date].split('-')
+
+    @today = Date.new(calendar_dates[0].to_i, calendar_dates[1].to_i, calendar_dates[2].to_i)
+
+    @journal = get_journal(@today.year, @today.month, @today.day)
+
+    if @journal == nil
+   
+      @journal = Journal.new
+
+    end
+
+    render partial: "journal", layout: false
+
+    #head :ok
 
   end
 
