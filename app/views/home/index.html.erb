@@ -8,7 +8,12 @@
   </div>
   <div id='home-middle' class='home-major-section'>
     <div id='middle-content-container' class='major-section-content'>
-      <%= render partial: "calendar", layout: false %>
+      <div id='middle-top-content'>
+        <%= render partial: "calendar", layout: false %>
+      </div>
+      <div id='middle-bottom-content'>
+        <%= render partial: "longterm_notes", layout: false %>
+      </div>
     </div>
   </div>
   <div id='home-right-content' class='home-major-section'>

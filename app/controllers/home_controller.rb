@@ -10,13 +10,17 @@ class HomeController < ApplicationController
     @month_start_day = Date.new(@today.year, @today.month, 1).wday
     @days_in_month   = Date.new(@today.year, @today.month, -1).day 
 
-    #Journal.new(title: 'Good day', tags: '{}', content: 'Today was great. I had such a great time', user_id: 3, year: today.year, month: today.month, day: today.day).save
-
     @journal = get_journal(@today.year, @today.month, @today.day)
 
     if @journal == nil
       @journal = Journal.new
     end
+
+    if @current_user == nil
+      return
+    end
+
+    @notes = Note.where(user_id: @current_user.id)
 
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530012807) do
+ActiveRecord::Schema.define(version: 20160702193401) do
 
   create_table "journals", force: :cascade do |t|
     t.text     "title"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20160530012807) do
     t.integer  "year"
     t.integer  "month"
     t.integer  "day"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "note_type"
+    t.text     "title"
+    t.text     "content"
+    t.text     "tags"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

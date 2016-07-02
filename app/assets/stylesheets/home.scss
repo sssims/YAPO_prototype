@@ -42,7 +42,7 @@
   background-color: #888888;
 }
 
-// home middle section
+// home middle-top section
 
 .home-major-section {
   position: relative;
@@ -62,7 +62,7 @@
 
   background-color: #2F2E58;
 
-  width: 400px; //ToDo: update calendar CSS to be resizable
+  width: 300px; //ToDo: update calendar CSS to be resizable
 }
 
 #calendar-header {
@@ -92,14 +92,17 @@
 
   border: 1px solid black;
 
-  height: 54px;
-  width: 54px;
+  height: 42px;
+  width: 42px;
 
   cursor: pointer;
   cursor: hand;
 
   background-color: #AAAAAA;
 
+  padding: 2px;
+
+  font-size: 9pt;
 }
 
 #calendar-dates-table > tbody > tr > td.blank-cell {
@@ -110,6 +113,14 @@
 #calendar-dates-table > tbody > tr > td:hover {
   background-color: #DDDDDD;
 }
+
+// Home middle-bottom content (longterm notes)
+
+#longterm-notes-page-container {
+  background-color: #CCCCCC;
+}
+
+// Home right content (journal)
 
 #journal-entry {
   height: 477px;

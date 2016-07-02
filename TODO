@@ -6,4 +6,7 @@
       - date area height ~= 80% width. 
       - date cells transform to match date area
       - Calendar has minimum height and width?
+
+2. Long Term Notes
+   - View will be below calendar partial at first.
       
