@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     @days_in_month   = Date.new(@today.year, @today.month, -1).day 
 
     @journal = get_journal(@today.year, @today.month, @today.day)
-
+ 
     if @journal == nil
       @journal = Journal.new
     end

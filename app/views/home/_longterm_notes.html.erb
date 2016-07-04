@@ -1,7 +1,13 @@
 <div id='longterm-notes-page-container'>
-  <% @notes.each do |note| %>
-    <div class='longterm-note-title'>
-      <%= note.title %>
+  <% if @notes != nil %>
+    <% @notes.each do |note| %>
+      <div class='longterm-note-title'>
+        <%= note.title %>
+      </div>
+    <% end %>
+  <% else %>
+    <div>
+      <a>No long term goals.</a>
     </div>
   <% end %>
 </div>
