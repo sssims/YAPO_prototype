@@ -56,4 +56,19 @@ class HomeController < ApplicationController
 
   end
 
+  def update_calendar_month
+ 
+    new_month = params[:calendar_month]
+
+    @today = Date.new(Date.today.year, new_month.to_i, 1)
+
+    @month = @today.strftime("%B")
+    @month_start_day = @today.wday
+    @days_in_month   = Date.new(@today.year, new_month.to_i, -1).day 
+
+    render partial: "calendar", layout: false
+
+  end
+
+
 end
