@@ -1,13 +1,21 @@
 <div id='longterm-notes-page-container'>
-  <% if @notes != nil %>
-    <% @notes.each do |note| %>
-      <div class='longterm-note-title'>
-        <%= note.title %>
+  <div id='longterm-notes-content'>
+    <% if @notes != nil %>
+      <% @notes.each do |note| %>
+        <div class='longterm-note-title'>
+          <%= note.title %>
+        </div>
+      <% end %>
+    <% else %>
+      <div>
+        <a>No long term goals.</a>
       </div>
     <% end %>
-  <% else %>
-    <div>
-      <a>No long term goals.</a>
+  </div>
+  <div id='longterm-notes-util'>
+    <%#= link_to "Add", :controller => "home", :action => "create_note" , remote: true %> 
+    <div id='add-longterm-notes-content'>
+      <input type='button' value='Add' id='add-longterm-notes-button'/>
     </div>
-  <% end %>
+  </div>
 </div>

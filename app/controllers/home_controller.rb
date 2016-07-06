@@ -88,5 +88,20 @@ class HomeController < ApplicationController
 
   end
 
+  def create_note
+
+    if @current_user == nil
+      head :ok, content_type: "text/html"
+      return
+    end
+
+    @new_longterm_note = Note.new
+
+    @new_longterm_note.note_type = NotesHelper::NOTETYPE_LONGTRM
+    @new_longterm_note.user_id = @current_user.id
+
+    render partial: "new_longterm_note", layout: false
+
+  end
 
 end

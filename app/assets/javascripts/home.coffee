@@ -27,3 +27,12 @@ $(document).on "click", ".calendar-month-switch", ->
     success: (data, textStatus, jqXHR) ->
        $('#middle-top-content').html("#{data}")
 
+$(document).on "click", "#add-longterm-notes-button", ->
+  $.ajax '/home_create_note',
+    type: 'GET'
+    dataType: 'html'
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX Error: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       $('#add-longterm-notes-content').html("#{data}")
+
