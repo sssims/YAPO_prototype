@@ -1,0 +1,32 @@
+<div id='planner-page-container'>
+  <div id='today-tasks'>
+    <div id='today-tasks-header'>
+      <a>Today's Tasks</a>
+    </div>
+    <% @today_tasks.each do |note| %>
+      <div class='planner-entry'>
+        <%= note.title %>
+      </div>
+    <% end %>
+  </div>
+  <div id='upcoming-tasks'>
+    <div id='upcoming-tasks-header'>
+      <a>Upcoming Tasks</a>
+    </div>
+    <% @upcoming_tasks.each do |note| %>
+      <div class='planner-entry'>
+        <%= note.title %>
+      </div>
+    <% end %>
+  </div>
+  <div id='overdue-tasks'>
+    <div id='overdue-tasks-header'>
+      <a>Overdue Tasks</a>
+    </div>
+    <% @overdue_tasks.each do |note| %>
+      <div class='planner-entry'>
+        <%= note.title %>
+      </div>
+    <% end %>
+  </div>
+</div>

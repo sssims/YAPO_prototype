@@ -3,7 +3,7 @@ require 'date'
 class HomeController < ApplicationController
 
   def index
-
+ 
     @today = Date.today
 
     @month = @today.strftime("%B")
@@ -11,6 +11,10 @@ class HomeController < ApplicationController
     @days_in_month   = Date.new(@today.year, @today.month, -1).day 
 
     @journal = get_journal(@today.year, @today.month, @today.day)
+
+    @upcoming_tasks = []
+    @today_tasks = []
+    @overdue_tasks = []
  
     if @journal == nil
       @journal = Journal.new
@@ -22,6 +26,20 @@ class HomeController < ApplicationController
 
     @notes = Note.where(user_id: @current_user.id)
 
+    tasks = Task.where(user_id: @current_user.id)
+
+    tasks.each do |task|
+   
+      if task.deadline < Date.today.beginning_of_day
+        @overdue_tasks << task
+      elsif task.deadline > Date.today.end_of_day
+        @upcoming_tasks << task
+      else
+        @today_tasks << task
+      end
+
+    end
+  
   end
 
   def get_journal(year, month, day)
