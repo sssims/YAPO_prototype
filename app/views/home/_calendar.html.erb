@@ -8,6 +8,7 @@
       </div>
       <div id='calendar-header-title'>
         <a><%= @month %></a>
+        <a><%= @today.year.to_s %></a>
       </div>
       <div id='calendar-header-next'>
         <div id='<%= (@today.month + 1).to_s %>'class='calendar-month-switch'>

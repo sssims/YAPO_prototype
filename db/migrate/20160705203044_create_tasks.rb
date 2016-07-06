@@ -7,10 +7,12 @@ class CreateTasks < ActiveRecord::Migration
       t.text	:title
       t.text	:description
       t.text	:tags
+
       t.datetime :deadline
       t.datetime :completed
 
       t.timestamps null: false
+
     end
   end
 end
