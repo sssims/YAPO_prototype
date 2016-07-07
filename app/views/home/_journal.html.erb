@@ -11,4 +11,7 @@
       <% end %>
     </div>
   </div>
+  <div id='journal-show-link'>
+    <%= link_to "->", controller: "journals", action: "show", id: @journal.id, :year => @today.year, :month => @today.month, :day => @today.day %>
+  </div>
 </div>

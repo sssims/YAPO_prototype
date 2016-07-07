@@ -1,0 +1,14 @@
+<div id='journal-page-container'>
+  <div id='journal-entry'>
+    <div id=journal-content'>
+      <%= form_for(@journal, url: {controller: 'journals', action: 'create_or_update'}) do |f| %>
+        <%= f.text_field :title %>
+        <%= f.text_field :year, :value => @journal.year, :readonly => true %>
+        <%= f.text_field :month, :value => @journal.month, :readonly => true %>
+        <%= f.text_field :day, :value => @journal.day, :readonly => true  %>
+        <%= f.text_area  :content, :value => @journal.content %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

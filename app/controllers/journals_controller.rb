@@ -25,4 +25,17 @@ class JournalsController < ApplicationController
 
   end
 
+  def show
+
+    if params[:id] != nil
+      @journal = Journal.find(params[:id]) 
+    else
+      @journal = Journal.new
+      @journal.year = params[:year]
+      @journal.month = params[:month]
+      @journal.day = params[:day]
+    end
+
+  end
+
 end
