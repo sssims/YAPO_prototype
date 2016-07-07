@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   
     task_params = params[:task]
  
-    deadline = Date.new(task_params["deadline(1i)"].to_i, task_params["deadline(2i)"].to_i, task_params["deadline(3i)"].to_i)
+    deadline = DateTime.new(task_params["deadline(1i)"].to_i, task_params["deadline(2i)"].to_i, task_params["deadline(3i)"].to_i, task_params["deadline(4i)"].to_i, task_params["deadline(5i)"].to_i)
 
     new_task = Task.new(user_id: session[:user_id], title: task_params[:title], description: task_params[:description], tags: "", deadline: deadline)
 

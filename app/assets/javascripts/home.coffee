@@ -14,8 +14,20 @@ $(document).on "click", "#calendar-dates-table > tbody > tr > td", ->
     error: (jqXHR, textStatus, errorThrown) ->
        $('body').append "AJAX Error: #{textStatus}"
     success: (data, textStatus, jqXHR) ->
-       $('#right-content-container').html("#{data}")
+       $('#right-top-content').html("#{data}")
        #$('#right-content-container').append "#{data}"
+  $.ajax '/update_task_date',
+    type: 'GET'
+    dataType: 'html'
+    data: { calendar_date: $(this).attr("id") }
+    #url: ""
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX Error: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       $('#left-bottom-content').html("#{data}")
+
+$(document).on "click", ".calendar-month-switch", ->
+
 
 $(document).on "click", ".calendar-month-switch", ->
   $.ajax '/update_calendar_month',

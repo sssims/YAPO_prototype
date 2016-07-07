@@ -1,0 +1,18 @@
+<div id='tasks-daily-container'>
+  <div id='tasks-daily-header'>
+    <h4><%= @today.strftime("%x") %> tasks</h4>
+  </div>
+  <div id='tasks-daily-content'>
+    <% @today_tasks.each do |task| %>
+      <div id='daily-task'>
+        <div id='daily-task-header'>
+          <%= task.title %>
+        </div>
+        <div id='daily-task-body'>
+          <div><%= task.description%></div>
+          <div><%= task.deadline.strftime("%H:%M") %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -3,7 +3,8 @@ Timeline:
 	X - Application in functional state with showing, storing, and creating journals, tasks, and long term goals.
         X - Tasks mark-complete functionality
              - Pretty crude, but functional.
-          - Tasks daily view (Show date at top). Below tasks wide view.
+        X - Tasks daily view (Show date at top). Below tasks wide view.
+             - Also Jank, but functional
           - Calendar Highlights
               - 'X' for all tasks complete
               - Different color for today. 

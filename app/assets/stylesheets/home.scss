@@ -42,6 +42,14 @@
   background-color: #888888;
 }
 
+// Home minor section containers
+
+.minor-section-content {
+  background-color: #EEEEEE;
+
+  margin: 5px;
+}
+
 // home middle-top section
 
 .home-major-section {
@@ -53,6 +61,8 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+
+  background-color: #444444;
 }
 
 #calendar {
@@ -130,9 +140,6 @@
 #journal-entry {
   height: 477px;
   width: 244px;
-
-
-  background-color: #AAAAAA;
 }
 
 #planner-entry {
@@ -140,12 +147,6 @@
   width: 200px;
 
   background-color: #AAAAAA;
-}
-
-// Task Partial
-
-#left-content-container {
-  background-color: #FFFFFF;
 }
 
 // Journal partial

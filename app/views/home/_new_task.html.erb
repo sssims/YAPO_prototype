@@ -6,7 +6,7 @@
     <%= f.text_field :description %>
     <p>Deadline</p>
     <%#= f.date_field :deadline, :value => , :readonly => true %>
-    <%= f.date_select(:deadline, :order => [:month, :day, :year])%>
+    <%= f.datetime_select(:deadline, :order => [:month, :day, :year])%>
     <%= f.submit %>
   <% end %>
 </div>

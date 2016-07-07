@@ -76,7 +76,27 @@ class HomeController < ApplicationController
 
     render partial: "journal", layout: false
 
-    #head :ok
+  end
+
+  def update_task_date
+
+    calendar_dates = params[:calendar_date].split('-')
+
+    @today = Date.new(calendar_dates[0].to_i, calendar_dates[1].to_i, calendar_dates[2].to_i)
+
+    @today_tasks = []
+
+    tasks = Task.where(user_id: @current_user.id)
+
+    tasks.each do |task|
+  
+      if task.deadline > @today.beginning_of_day && task.deadline < @today.end_of_day
+        @today_tasks << task
+      end
+
+    end
+
+    render partial: "tasks_daily", layout: false
 
   end
 

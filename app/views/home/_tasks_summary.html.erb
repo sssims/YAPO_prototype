@@ -1,12 +1,15 @@
 <div id='planner-page-container'>
+  <div id='planner-page-header'>
+    <h4>Tasks Summary</h4>
+  </div>
   <div id='today-tasks'>
     <div id='today-tasks-header'>
       <a>Today's Tasks</a>
     </div>
-    <% @today_tasks.each do |note| %>
+    <% @today_tasks.each do |task| %>
       <div class='planner-entry'>
-        <input type='checkbox' id='<%= note.id %>' class='task-checkbox' /> 
-        <%= note.title %>
+        <input type='checkbox' id='<%= task.id %>' class='task-checkbox' /> 
+        <%= task.title %>
       </div>
     <% end %>
   </div>
@@ -14,10 +17,10 @@
     <div id='upcoming-tasks-header'>
       <a>Upcoming Tasks</a>
     </div>
-    <% @upcoming_tasks.each do |note| %>
+    <% @upcoming_tasks.each do |task| %>
       <div class='planner-entry'>
-        <input type='checkbox' id='<%= note.id %>' class='task-checkbox' /> 
-        <%= note.title %>
+        <input type='checkbox' id='<%= task.id %>' class='task-checkbox' /> 
+        <%= task.title %>
       </div>
     <% end %>
   </div>
@@ -26,10 +29,10 @@
       <div id='overdue-tasks-header'>
         <a>Overdue Tasks</a>
       </div>
-      <% @overdue_tasks.each do |note| %>
+      <% @overdue_tasks.each do |task| %>
         <div class='planner-entry'>
-          <input type='checkbox' id='<%= note.id %>' class='task-checkbox' /> 
-          <%= note.title %>
+        <input type='checkbox' id='<%= task.id %>' class='task-checkbox' /> 
+        <%= task.title %>
         </div>
       <% end %>
     </div>

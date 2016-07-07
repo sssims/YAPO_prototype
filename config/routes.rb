@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post  'create_or_update' => 'journals#create_or_update'
 
   get   'update_date' => 'home#update_date'
+  get   'update_task_date' => 'home#update_task_date'
 
   get	'update_calendar_month' => 'home#update_calendar_month'
 

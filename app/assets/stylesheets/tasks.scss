@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.task-checkbox:checked {
-
+#planner-page-header, #tasks-daily-header {
+  display: table;
+  margin: auto;
 }
+
+#daily-task-body {
+  margin-left: 16px;
+}
+
