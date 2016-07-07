@@ -18,7 +18,7 @@ class JournalsController < ApplicationController
     current_entry.content = curr_j[:content] 
   
     if !current_entry.save
-      binding.pry
+      #ERR - wits the deel?
     end
   
     redirect_to :controller => 'home', :action => 'index'

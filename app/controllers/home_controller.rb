@@ -104,4 +104,19 @@ class HomeController < ApplicationController
 
   end
 
+  def create_task
+
+    if @current_user == nil
+      head :ok, content_type: "text/html"
+      return
+    end
+
+    @new_task= Task.new
+
+    @new_task.user_id = @current_user.id
+
+    render partial: "new_task", layout: false
+
+  end
+
 end

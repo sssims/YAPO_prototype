@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   get	'update_calendar_month' => 'home#update_calendar_month'
 
   get   'home_create_note' => 'home#create_note'
-
   post	'create_note' => 'notes#create'
+
+  get   'home_create_task' => 'home#create_task'
+  post	'create_task' => 'tasks#create'
 
 end

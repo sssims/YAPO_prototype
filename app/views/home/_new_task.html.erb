@@ -1,0 +1,12 @@
+<div id='create-task-form'>
+  <%= form_for(@new_task, url: {controller: 'tasks', action: 'create'}) do |f| %>
+    <p>Title</p>
+    <%= f.text_field :title %>
+    <p>Description</p>
+    <%= f.text_field :description %>
+    <p>Deadline</p>
+    <%#= f.date_field :deadline, :value => , :readonly => true %>
+    <%= f.date_select(:deadline, :order => [:month, :day, :year])%>
+    <%= f.submit %>
+  <% end %>
+</div>

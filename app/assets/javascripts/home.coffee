@@ -36,3 +36,12 @@ $(document).on "click", "#add-longterm-notes-button", ->
     success: (data, textStatus, jqXHR) ->
        $('#add-longterm-notes-content').html("#{data}")
 
+$(document).on "click", "#add-task-button", ->
+  $.ajax '/home_create_task',
+    type: 'GET'
+    dataType: 'html'
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX Error: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       $('#add-task-content').html("#{data}")
+

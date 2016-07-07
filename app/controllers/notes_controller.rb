@@ -2,11 +2,13 @@ class NotesController < ApplicationController
 
   def create
 
-    new_note = params[:note]
+    note_params = params[:note]
 
+    new_note = Note.new(user_id: session[:user_id], note_type: NotesHelper::NOTETYPE_LONGTRM, title: note_params[:title], content: note_params[:content], tags: "")
+     
     new_note.save
 
-    head :ok
+    redirect_to :controller => 'home', :action => 'index'
 
   end 
 
