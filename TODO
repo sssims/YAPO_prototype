@@ -1,3 +1,18 @@
+Timeline:
+
+	X - Application in functional state with showing, storing, and creating journals, tasks, and long term goals.
+          - Tasks mark-complete functionality
+          - Tasks daily view (Show date at top). Below tasks wide view.
+          - Calendar Highlights
+              - 'X' for all tasks complete
+              - Different color for today. 
+              - '!' for > 0 tasks incomplete. Turn red for past dates. 
+          - Complete isolated views including create / update functionality.
+          - General Notes. 
+          - Links?
+              
+Element Details:
+
 1. The Calender view, _calendar.html.erb, should be multipurpose.
    - Make it resizable. Will require change/refactor of calendar CSS. In app/assets/stylesheets/home.scss. See view file for relevent element ids.
       - Bottom corner grab style
@@ -9,4 +24,4 @@
 
 2. Long Term Notes
     X - View will be below calendar partial at first.
-      
+
