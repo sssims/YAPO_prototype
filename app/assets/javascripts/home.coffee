@@ -45,3 +45,15 @@ $(document).on "click", "#add-task-button", ->
     success: (data, textStatus, jqXHR) ->
        $('#add-task-content').html("#{data}")
 
+$(document).on "click", ".planner-entry > .task-checkbox", ->
+  $(this).attr("disabled", "disabled")
+  $.ajax '/tasks_mark_complete',
+    type: 'POST'
+    dataType: 'html'
+    data: { note_id: $(this).attr("id") }
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX Error: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       # nothing
+       #$('#add-task-content').html("#{data}")
+

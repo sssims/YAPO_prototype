@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get   'tasks_index' => 'tasks#index'
   get   'notes_index' => 'notes#index'
 
+  post	'tasks_mark_complete' => 'tasks#mark_complete'
+
   resource :journals
 
 end

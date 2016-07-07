@@ -24,9 +24,13 @@ class TasksController < ApplicationController
 
   end
 
-  def mark_completed
+  def mark_complete
 
-    
+    completed_task = Task.find(params[:note_id])
+    completed_task.completed = DateTime.now
+    completed_task.save
+ 
+    head :ok
 
   end
 

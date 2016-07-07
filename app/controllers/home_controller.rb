@@ -15,6 +15,7 @@ class HomeController < ApplicationController
     @upcoming_tasks = []
     @today_tasks = []
     @overdue_tasks = []
+    @completed_tasks = []
  
     if @journal == nil
       @journal = Journal.new
@@ -29,7 +30,12 @@ class HomeController < ApplicationController
     tasks = Task.where(user_id: @current_user.id)
 
     tasks.each do |task|
-   
+  
+      if task.completed != nil
+        @completed_tasks << task
+        next
+      end 
+
       if task.deadline < Date.today.beginning_of_day
         @overdue_tasks << task
       elsif task.deadline > Date.today.end_of_day

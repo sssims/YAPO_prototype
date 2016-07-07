@@ -5,6 +5,7 @@
     </div>
     <% @today_tasks.each do |note| %>
       <div class='planner-entry'>
+        <input type='checkbox' id='<%= note.id %>' class='task-checkbox' /> 
         <%= note.title %>
       </div>
     <% end %>
@@ -15,16 +16,31 @@
     </div>
     <% @upcoming_tasks.each do |note| %>
       <div class='planner-entry'>
+        <input type='checkbox' id='<%= note.id %>' class='task-checkbox' /> 
         <%= note.title %>
       </div>
     <% end %>
   </div>
-  <div id='overdue-tasks'>
-    <div id='overdue-tasks-header'>
-      <a>Overdue Tasks</a>
+  <% if @overdue_tasks.count > 0 %>
+    <div id='overdue-tasks'>
+      <div id='overdue-tasks-header'>
+        <a>Overdue Tasks</a>
+      </div>
+      <% @overdue_tasks.each do |note| %>
+        <div class='planner-entry'>
+          <input type='checkbox' id='<%= note.id %>' class='task-checkbox' /> 
+          <%= note.title %>
+        </div>
+      <% end %>
     </div>
-    <% @overdue_tasks.each do |note| %>
+  <% end %>
+  <div id='completed-tasks'>
+    <div id='completed-tasks-header'>
+      <a>Most Recent Completed Tasks</a>
+    </div>
+    <% @completed_tasks.each do |note| %>
       <div class='planner-entry'>
+        <input type='checkbox' id='<%= note.id %>' class='task-checkbox' checked disabled /> 
         <%= note.title %>
       </div>
     <% end %>
