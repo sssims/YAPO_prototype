@@ -1,0 +1,13 @@
+<div id='task-index-container'>
+  <% @tasks.each do |task| %>
+    <div class='task-container'>
+      <%= task.title %>
+      <%= task.description %>
+      <%= task.deadline %>
+      <%= task.completed %>
+    </div>
+  <% end %>
+  <div id='task-index-util'>
+   <%= link_to "Back", controller: "home", action: "index" %>
+  </div>
+<div>

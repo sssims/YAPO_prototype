@@ -12,4 +12,10 @@ class NotesController < ApplicationController
 
   end 
 
+  def index
+
+    @notes = Note.where(user_id: session[:user_id])
+
+  end
+
 end

@@ -1,0 +1,11 @@
+<div id='notes-index-container'>
+  <% @notes.each do |note| %>
+    <div class='note-container'>
+      <%= note.title %>
+      <%= note.content %>
+    </div>
+  <% end %>
+  <div id='notes-index-util'>
+   <%= link_to "Back", controller: "home", action: "index" %>
+  </div>
+</div>

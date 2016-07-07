@@ -1,5 +1,15 @@
 class TasksController < ApplicationController
 
+  def index
+
+    @tasks = Task.where(user_id: session[:user_id])
+
+    if @tasks == nil
+      @tasks = []
+    end
+
+  end
+
   def create
   
     task_params = params[:task]

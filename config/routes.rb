@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   get   'home_create_task' => 'home#create_task'
   post	'create_task' => 'tasks#create'
 
+  get   'tasks_index' => 'tasks#index'
+  get   'notes_index' => 'notes#index'
+
   resource :journals
 
 end
