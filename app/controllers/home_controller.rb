@@ -16,7 +16,11 @@ class HomeController < ApplicationController
     @today_tasks = []
     @overdue_tasks = []
     @completed_tasks = []
- 
+
+    @completed_task_dates = []
+    @overdue_task_dates = []
+    @upcoming_task_dates= []
+
     if @journal == nil
       @journal = Journal.new
     end
@@ -33,13 +37,16 @@ class HomeController < ApplicationController
   
       if task.completed != nil
         @completed_tasks << task
+        @completed_task_dates << task.deadline.year.to_s + '-' + task.deadline.month.to_s + '-' + task.deadline.day.to_s
         next
       end 
 
       if task.deadline < Date.today.beginning_of_day
         @overdue_tasks << task
+        @overdue_task_dates << task.deadline.year.to_s + '-' + task.deadline.month.to_s + '-' + task.deadline.day.to_s
       elsif task.deadline > Date.today.end_of_day
         @upcoming_tasks << task
+        @upcoming_task_dates << task.deadline.year.to_s + '-' + task.deadline.month.to_s + '-' + task.deadline.day.to_s
       else
         @today_tasks << task
       end
@@ -109,6 +116,27 @@ class HomeController < ApplicationController
     @month = @today.strftime("%B")
     @month_start_day = @today.wday
     @days_in_month   = Date.new(@today.year, new_month.to_i, -1).day 
+
+    @completed_task_dates = []
+    @overdue_task_dates = []
+    @upcoming_task_dates= []
+
+    tasks = Task.where(user_id: @current_user.id)
+
+    tasks.each do |task|
+  
+      if task.completed != nil
+        @completed_task_dates << task.deadline.year.to_s + '-' + task.deadline.month.to_s + '-' + task.deadline.day.to_s
+        next
+      end 
+
+      if task.deadline < Date.today.beginning_of_day
+        @overdue_task_dates << task.deadline.year.to_s + '-' + task.deadline.month.to_s + '-' + task.deadline.day.to_s
+      elsif task.deadline > Date.today.end_of_day
+        @upcoming_task_dates << task.deadline.year.to_s + '-' + task.deadline.month.to_s + '-' + task.deadline.day.to_s
+      end
+
+    end
 
     render partial: "calendar", layout: false
 

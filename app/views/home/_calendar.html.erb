@@ -23,11 +23,33 @@
           <td class='blank-cell'></td>
         <% end %>
         <% for i in @month_start_day...(@days_in_month + @month_start_day)%>
+          <% date_string = @today.year.to_s + '-' + @today.month.to_s + '-' + (i + 1 - @month_start_day).to_s %>
           <% if i % 7 == 0 & i > 0 %>
             <tr>
           <% end %>
-          <td id='<%= @today.year.to_s + '-' + @today.month.to_s + '-' + (i + 1 - @month_start_day).to_s %>'>
-            <a><%= i + 1 - @month_start_day %></a>
+          <% if Date.new(@today.year, @today.month, i + 1 - @month_start_day) < @today_date %> 
+          <td id='<%= date_string %>' class='past-date'>
+          <% elsif Date.new(@today.year, @today.month, i + 1 - @month_start_day) > @today_date%>
+          <td id='<%= date_string %>' class='future-date'>
+          <% else %>
+          <td id='<%= date_string %>' class='today-date'>
+          <% end %>
+            <div class='calendar-cell-content'>
+              <%= i + 1 - @month_start_day %>
+              <% if @overdue_task_dates.include? date_string %>
+                <div class='calendar-overdue-mark'>
+                  !
+                </div>
+              <% elsif @completed_task_dates.include? date_string %>
+                <div class='calendar-completed-mark'>
+                  X
+                </div>
+              <% elsif @upcoming_task_dates.include? date_string %>
+                <div class='calendar-upcoming-mark'>
+                  !
+                </div>
+              <% end %>
+            </div>
           </td>
           <% if i % 7 == 6 %>
             </tr>

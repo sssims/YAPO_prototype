@@ -27,9 +27,6 @@ $(document).on "click", "#calendar-dates-table > tbody > tr > td", ->
        $('#left-bottom-content').html("#{data}")
 
 $(document).on "click", ".calendar-month-switch", ->
-
-
-$(document).on "click", ".calendar-month-switch", ->
   $.ajax '/update_calendar_month',
     type: 'GET'
     dataType: 'html'

@@ -84,6 +84,18 @@
   margin-bottom: 10px;
 }
 
+.calendar-overdue-mark {
+  color: red;
+}
+
+.calendar-completed-mark {
+  color: blue;
+}
+
+.calendar-upcoming-mark {
+  color: green;
+}
+
 #calendar-header-title {
   position: absolute;
   top: 50%;
@@ -108,7 +120,7 @@
   cursor: pointer;
   cursor: hand;
 
-  background-color: #AAAAAA;
+  //background-color: #AAAAAA;
 
   padding: 2px;
 
@@ -127,6 +139,22 @@
 .calendar-month-switch {
   cursor: pointer;
   cursor: hand;
+}
+
+.calendar-cell-content > div {
+  display: inline-block;
+}
+
+.past-date {
+  background-color: #AAAAAA;
+}
+
+.future-date {
+  background-color: #DDDDDD;
+}
+
+.today-date {
+  background-color: #FFFFFF;
 }
 
 // Home middle-bottom content (longterm notes)

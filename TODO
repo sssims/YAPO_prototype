@@ -5,7 +5,7 @@ Timeline:
              - Pretty crude, but functional.
         X - Tasks daily view (Show date at top). Below tasks wide view.
              - Also Jank, but functional
-          - Calendar Highlights
+        X - Calendar Highlights
               - 'X' for all tasks complete
               - Different color for today. 
               - '!' for > 0 tasks incomplete. Turn red for past dates. 
