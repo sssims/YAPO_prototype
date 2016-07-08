@@ -14,5 +14,16 @@
         </div>
       </div>
     <% end %>
+    <% @today_completed_tasks.each do |task| %>
+      <div id='daily-task' class='daily-task-completed'>
+        <div id='daily-task-header'>
+          <%= task.title %>
+        </div>
+        <div id='daily-task-body'> 
+          <div><%= task.description%></div>
+          <div><%= task.deadline.strftime("%H:%M") %></div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

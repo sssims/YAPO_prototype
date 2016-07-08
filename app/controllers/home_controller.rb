@@ -16,6 +16,7 @@ class HomeController < ApplicationController
     @today_tasks = []
     @overdue_tasks = []
     @completed_tasks = []
+    @today_completed_tasks = []
 
     @completed_task_dates = []
     @overdue_task_dates = []
@@ -38,7 +39,13 @@ class HomeController < ApplicationController
       if task.completed != nil
         @completed_tasks << task
         @completed_task_dates << task.deadline.year.to_s + '-' + task.deadline.month.to_s + '-' + task.deadline.day.to_s
+
+        if task.deadline > @today.beginning_of_day && task.deadline < @today.end_of_day
+          @today_completed_tasks << task
+        end 
+
         next
+
       end 
 
       if task.deadline < Date.today.beginning_of_day
@@ -92,13 +99,18 @@ class HomeController < ApplicationController
     @today = Date.new(calendar_dates[0].to_i, calendar_dates[1].to_i, calendar_dates[2].to_i)
 
     @today_tasks = []
+    @today_completed_tasks = []
 
     tasks = Task.where(user_id: @current_user.id)
 
     tasks.each do |task|
   
-      if task.deadline > @today.beginning_of_day && task.deadline < @today.end_of_day
-        @today_tasks << task
+      if task.deadline >= @today.beginning_of_day && task.deadline < @today.end_of_day
+        if task.completed == nil 
+          @today_tasks << task
+        else 
+          @today_completed_tasks << task
+        end
       end
 
     end
