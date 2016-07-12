@@ -1,10 +1,12 @@
 <div id='task-index-container'>
   <% @tasks.each do |task| %>
     <div class='task-container'>
-      <%= task.title %>
-      <%= task.description %>
-      <%= task.deadline %>
-      <%= task.completed %>
+      <div><h4><%= task.title %></h4></div>
+      <div><%= task.description %></div>
+      <div><%= task.deadline.strftime("%D") %></div>
+      <% if task.completed != nil %>
+        <div>Completed: <%= task.completed.strftime("%D%n%H:%M")%></div>
+      <% end %>
     </div>
   <% end %>
   <div id='task-index-util'>

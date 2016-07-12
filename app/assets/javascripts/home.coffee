@@ -66,3 +66,24 @@ $(document).on "click", ".planner-entry > .task-checkbox", ->
        # nothing
        #$('#add-task-content').html("#{data}")
 
+$(document).on "click", ".right-nav-button", ->
+  $.ajax '/update_right_nav',
+    type: 'GET'
+    dataType: 'html'
+    data: { target_page: $(this).attr("id"), today_string : $('#calendar').attr("class") }
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX Error: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       $('#right-top-content').html("#{data}")
+
+
+$(document).on "click", ".left-nav-button", ->
+  $.ajax '/update_left_nav',
+    type: 'GET'
+    dataType: 'html'
+    data: { target_page: $(this).attr("id"), today_string : $('#calendar').attr("class") }
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX Error: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       $('#left-top-content').html("#{data}")
+

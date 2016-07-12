@@ -30,6 +30,9 @@ Rails.application.routes.draw do
 
   post	'tasks_mark_complete' => 'tasks#mark_complete'
 
+  get	'update_left_nav' => 'home#update_left_nav'
+  get	'update_right_nav' => 'home#update_right_nav'
+
   resource :journals
 
 end

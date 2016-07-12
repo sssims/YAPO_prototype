@@ -10,6 +10,9 @@ Timeline:
               - Different color for today. 
               - '!' for > 0 tasks incomplete. Turn red for past dates. 
           - Complete isolated views including create / update functionality.
+              - Tasks
+              - Journal
+            X - Longterm Goals
           - General Notes. 
           - Links?
               

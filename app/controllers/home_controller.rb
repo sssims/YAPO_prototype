@@ -185,4 +185,78 @@ class HomeController < ApplicationController
 
   end
 
+  def update_left_nav
+ 
+    target_page = params[:target_page]
+
+    calendar_date = params[:today_string].split('-')
+
+    @today = Date.new(calendar_date[0].to_i, calendar_date[1].to_i, calendar_date[2].to_i)
+
+
+
+    case target_page
+
+    when "left-nav-journal"
+
+      @journal = get_journal(@today.year, @today.month, @today.day)
+      
+      if @journal == nil
+        @journal = Journal.new
+      end
+   
+      render partial: "journal", layout: false
+
+    when "left-nav-notes"
+      #render partial
+      head :ok
+    when "left-nav-tasks"
+
+      @upcoming_tasks = []
+      @today_tasks = []
+      @overdue_tasks = []
+      @completed_tasks = []
+
+      tasks = Task.where(user_id: @current_user.id)
+
+      tasks.each do |task|
+    
+        if task.completed != nil
+          @completed_tasks << task
+
+          next
+
+        end 
+
+        if task.deadline < Date.today.beginning_of_day
+          @overdue_tasks << task
+        elsif task.deadline > Date.today.end_of_day
+          @upcoming_tasks << task
+        else
+          @today_tasks << task
+        end
+
+      end      
+
+      render partial: "tasks_summary", layout: false
+
+    when "left-nav-goals"
+
+      @notes = Note.where(user_id: @current_user.id)
+
+      render partial: "longterm_notes", layout: false
+
+    end
+
+    return
+
+  end
+
+  def update_right_nav
+
+    target_page = params[:target_page]
+
+
+  end
+
 end

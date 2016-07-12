@@ -1,5 +1,10 @@
 <div id='home-page-container' class='page-container'>
   <div id='home-left-nav' class='home-major-section'>
+    <div id='left-nav-container' class='major-section-content'>
+      <div id='left-nav-content' class='minor-section-content'>
+        <%= render partial: "left_nav", layout: false %>
+      </div>
+    </div>
   </div>
   <div id='home-left-content' class='home-major-section'>
     <div id='left-content-container' class='major-section-content'>
@@ -29,5 +34,10 @@
     </div>
   </div>
   <div id='home-right-nav' class='home-major-section'>
+    <div id='right-nav-container' class='major-section-content'>
+      <div id='right-nav-content' class='minor-section-content'>
+        <%= render partial: "right_nav", layout: false %>
+      </div>
+    </div>
   </div>
 </div>
