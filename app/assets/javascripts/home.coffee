@@ -63,8 +63,6 @@ $(document).on "click", ".planner-entry > .task-checkbox", ->
     error: (jqXHR, textStatus, errorThrown) ->
        $('body').append "AJAX Error: #{textStatus}"
     success: (data, textStatus, jqXHR) ->
-       # nothing
-       #$('#add-task-content').html("#{data}")
 
 $(document).on "click", ".right-nav-button", ->
   $.ajax '/update_right_nav',
@@ -75,7 +73,6 @@ $(document).on "click", ".right-nav-button", ->
        $('body').append "AJAX Error: #{textStatus}"
     success: (data, textStatus, jqXHR) ->
        $('#right-top-content').html("#{data}")
-
 
 $(document).on "click", ".left-nav-button", ->
   $.ajax '/update_left_nav',
