@@ -1,5 +1,5 @@
 <div id='create-longterm-note-form'>
-  <%= form_for(@new_longterm_note, url: {controller: 'notes', action: 'create'}) do |f| %>
+  <%= form_for(@new_longterm_note, url: {controller: 'notes', action: 'create_longterm'}) do |f| %>
     <%= f.text_field :title %>
     <%= f.text_field :content %>
     <%= f.submit %>

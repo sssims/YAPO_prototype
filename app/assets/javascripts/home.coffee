@@ -37,7 +37,7 @@ $(document).on "click", ".calendar-month-switch", ->
        $('#middle-top-content').html("#{data}")
 
 $(document).on "click", "#add-longterm-notes-button", ->
-  $.ajax '/home_create_note',
+  $.ajax '/home_create_longterm_note',
     type: 'GET'
     dataType: 'html'
     error: (jqXHR, textStatus, errorThrown) ->
@@ -83,4 +83,13 @@ $(document).on "click", ".left-nav-button", ->
        $('body').append "AJAX Error: #{textStatus}"
     success: (data, textStatus, jqXHR) ->
        $('#left-top-content').html("#{data}")
+
+$(document).on "click", "#add-notes-button", ->
+  $.ajax '/home_create_note',
+    type: 'GET'
+    dataType: 'html'
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX Error: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       $('#add-notes-content').html("#{data}")
 

@@ -1,9 +1,9 @@
 <div id='longterm-notes-page-container'>
   <div id='longterm-notes-content'>
-    <% if @notes != nil %>
-      <% @notes.each do |note| %>
+    <% if @longterm_notes != nil %>
+      <% @longterm_notes.each do |note| %>
         <div class='longterm-note-title'>
-          <%= note.title %>
+          <%= link_to note.title, controller: "notes", action: "show", id: note.id %> 
         </div>
       <% end %>
     <% else %>
@@ -18,7 +18,7 @@
       <input type='button' value='Add' id='add-longterm-notes-button'/>
     </div>
     <div id='longterm-notes-show-link'>
-      <%= link_to "->", controller: "notes", action: "index" %>
+      <%= link_to "->", controller: "notes", action: "longterm_index" %>
     </div>
   </div>
 </div>

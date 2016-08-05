@@ -1,0 +1,19 @@
+<div id='notes-index-container'>
+  <% @notes.each do |note| %>
+    <div class='note-container'>
+      <div class='note-title'>
+        <h4><%= note.title %></h4>
+      </div>
+      <div class='note-content'>
+        <%= note.content %>
+      </div>
+      <div class='note-util'>
+        <input type='button' value='Edit' id='<%= note.id %>'/>
+        <input type='button' value='Delete' id='<%= note.id %>'/>
+      </div>
+    </div>
+  <% end %>
+  <div id='notes-index-util'>
+    <%= link_to "Back", controller: "home", action: "index" %>
+  </div>
+</div>

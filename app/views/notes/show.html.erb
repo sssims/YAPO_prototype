@@ -1,0 +1,15 @@
+<div id='note-show-container'>
+  <% if @note != nil %>
+    <p><%= @note.title %></p>
+    <p><%= @note.content %></p>
+    <p><%= @note.created_at.strftime("%D") %></p>
+    <div class='note-util'>
+      <div>
+        <%= link_to "destroy", { :controller => :notes, :action => 'destroy', :id => @note.id }, :method => :delete %>
+      </div>
+      <div>
+        <%= link_to "back", controller: 'home', action: 'index' %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   get	'update_calendar_month' => 'home#update_calendar_month'
 
   get   'home_create_note' => 'home#create_note'
+  get   'home_create_longterm_note' => 'home#create_longterm_note'
+
+  post	'create_note' => 'notes#create'
+  post	'create_longterm_note' => 'notes#create_longterm'
   post	'create_note' => 'notes#create'
 
   get   'home_create_task' => 'home#create_task'
@@ -33,6 +37,11 @@ Rails.application.routes.draw do
   get	'update_left_nav' => 'home#update_left_nav'
   get	'update_right_nav' => 'home#update_right_nav'
 
+  get	'notes_longterm_index' => 'notes#longterm_index'
+
   resource :journals
+  resource :notes
+
+  get	'notes_complete' => 'notes#complete'
 
 end

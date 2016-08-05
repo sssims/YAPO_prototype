@@ -30,7 +30,7 @@ class HomeController < ApplicationController
       return
     end
 
-    @notes = Note.where(user_id: @current_user.id)
+    @longterm_notes = Note.where(user_id: @current_user.id, note_type: NotesHelper::NOTETYPE_LONGTRM)
 
     tasks = Task.where(user_id: @current_user.id)
 
@@ -161,6 +161,22 @@ class HomeController < ApplicationController
       return
     end
 
+    @new_note = Note.new
+
+    @new_note.note_type = NotesHelper::NOTETYPE_DEFAULT
+    @new_note.user_id = @current_user.id
+
+    render partial: "new_note", layout: false
+
+  end
+
+  def create_longterm_note
+
+    if @current_user == nil
+      head :ok, content_type: "text/html"
+      return
+    end
+
     @new_longterm_note = Note.new
 
     @new_longterm_note.note_type = NotesHelper::NOTETYPE_LONGTRM
@@ -206,7 +222,9 @@ class HomeController < ApplicationController
       render partial: "journal", layout: false
 
     when "left-nav-notes"
-    
+
+      @notes = Note.where(user_id: @current_user.id, note_type: NotesHelper::NOTETYPE_DEFAULT)
+
       render partial: "notes", layout: false 
 
     when "left-nav-tasks"
@@ -241,7 +259,7 @@ class HomeController < ApplicationController
 
     when "left-nav-goals"
 
-      @notes = Note.where(user_id: @current_user.id)
+      @longterm_notes = Note.where(user_id: @current_user.id, note_type: NotesHelper::NOTETYPE_LONGTRM)
 
       render partial: "longterm_notes", layout: false
 
@@ -272,6 +290,8 @@ class HomeController < ApplicationController
       render partial: "journal", layout: false
 
     when "right-nav-notes"
+
+      @notes = Note.where(user_id: @current_user.id, note_type: NotesHelper::NOTETYPE_DEFAULT)
     
       render partial: "notes", layout: false 
 
@@ -307,7 +327,7 @@ class HomeController < ApplicationController
 
     when "right-nav-goals"
 
-      @notes = Note.where(user_id: @current_user.id)
+      @longterm_notes = Note.where(user_id: @current_user.id, note_type: NotesHelper::NOTETYPE_LONGTRM)
 
       render partial: "longterm_notes", layout: false
 

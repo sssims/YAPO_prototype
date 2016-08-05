@@ -1,5 +1,7 @@
 Timeline:
 
+	Phase I - complete
+ 
 	X - Application in functional state with showing, storing, and creating journals, tasks, and long term goals.
         X - Tasks mark-complete functionality
              - Pretty crude, but functional.
@@ -9,13 +11,34 @@ Timeline:
               - 'X' for all tasks complete
               - Different color for today. 
               - '!' for > 0 tasks incomplete. Turn red for past dates. 
-          - Complete isolated views including create / update functionality.
-              - Tasks
-              - Journal
+        / - Complete isolated views including create / update functionality.
+            / - Tasks
+            / - Journal
             X - Longterm Goals
-          - General Notes. 
-          - Links?
-              
+        X - General Notes. 
+        O - Links?
+ 
+	Phase II - in progress
+ 
+	Not sure what to work on, exactly (Besides UX). I'm going to use the application to the best of it's abilities and note what needs to be improved, added, then add it to this list. Phase II will be improvements deemed necessary from use. 
+
+        - Make long term goals completable - removable from list. 
+        - Make mockups for interface. The design and experience of the website are the most important things right now. 
+
+        Phase ? - things to move in to cycle.
+
+	- Hyperlinks
+	   - href
+	   - how created? 
+	- UX?
+	- Visual View.
+	   - Not sure what I want here. Gotta use the thang and figure it out.
+	- Logging?
+	   - Completed long term goals.
+	   - Statistics
+	- DESIGN document update
+
+
 Element Details:
 
 1. The Calender view, _calendar.html.erb, should be multipurpose.

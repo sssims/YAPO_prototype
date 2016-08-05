@@ -1,1 +1,21 @@
-<h3>Notes</h3>
+<div id='notes-partial-container'>
+  <div id='notes-content'>
+    <% if @notes != nil %>
+      <% @notes.each do |note| %>
+        <div class='note-title'>
+          <%= link_to note.title, controller: "notes", action: "show", id: note.id %> 
+        </div>
+      <% end %>
+    <% else %>
+      <div>
+        <a>No notes</a>
+      </div>
+    <% end %>
+  </div>
+  <div id='add-notes-content'>
+    <input type='button' value='Add' id='add-notes-button'/>
+  </div>
+  <div id='show-notes-index-div'>
+    <%= link_to "->", controller: "notes", action: "index" %>
+  </div>
+</div>
