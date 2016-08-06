@@ -6,8 +6,6 @@ class NotesController < ApplicationController
 
     new_note = Note.new(user_id: session[:user_id], title: note_params[:title], content: note_params[:content], tags: "")
      
-    binding.pry
-
     new_note.save
 
     redirect_to :controller => 'home', :action => 'index'
@@ -41,6 +39,25 @@ class NotesController < ApplicationController
   def show
 
     @note = Note.find(params[:id])
+
+  end
+
+  def update
+
+    curr_n = params[:note]
+
+    update_record = Note.find(curr_n[:id].to_i)
+
+    if update_record != nil
+ 
+      update_record.content = curr_n[:content]
+      update_record.title = curr_n[:title]
+
+      update_record.save
+ 
+    end
+
+    redirect_to :action => 'show', :id => curr_n[:id]
 
   end
 

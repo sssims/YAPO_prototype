@@ -1,8 +1,13 @@
 <div id='note-show-container'>
   <% if @note != nil %>
-    <p><%= @note.title %></p>
-    <p><%= @note.content %></p>
-    <p><%= @note.created_at.strftime("%D") %></p>
+    <div id='note-update-area'>
+      <%= form_for(@note, url: {controller: 'notes', action: 'update'}) do |f| %> 
+        <%= f.text_field :id, :value => @note.id %>
+        <%= f.text_field :title, :value => @note.title %>
+        <%= f.text_area :content, :value => @note.content %>
+        <%= f.submit %>
+      <% end %>
+    </div>
     <div class='note-util'>
       <div>
         <%= link_to "destroy", { :controller => :notes, :action => 'destroy', :id => @note.id }, :method => :delete %>
