@@ -89,7 +89,7 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
-      #queue "sudo service #{user} restart"
+      queue "sudo service #{user} restart"
     end
   end
 end
