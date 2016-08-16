@@ -1,0 +1,39 @@
+<div id='journal-notebook-container'>
+  <div id='back-button'>
+    <%= link_to "Back", controller: "home", action: "index" %>
+  </div>
+  <div id='content'>
+    <div id='left'>
+      <% @journals_left.each do |j| %>
+        <div>
+          <div>
+            <hr>
+          </div>
+          <%= j.month %>
+          <a>-</a>
+          <%= j.day %>
+        </div>
+        <div>
+          <%= j.content %>
+        </div>
+      <% end %>
+    </div>
+    <div id='right'>
+      <% @journals_right.each do |j| %>
+        <div>
+          <div>
+            <hr>
+          </div>
+          <div>
+          <%= j.month %>
+          <a>-</a>
+          <%= j.day %>
+          </div>
+        </div>
+        <div>
+          <%= j.content %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

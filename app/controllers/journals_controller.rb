@@ -38,4 +38,27 @@ class JournalsController < ApplicationController
 
   end
 
+  def notebook
+
+    journals = Journal.where(user_id: session[:user_id]).order(:created_at).limit(10)
+
+    @journals_left = Array.new
+    @journals_right = Array.new
+
+    total_length = 0
+
+    journals.each do |j|
+
+      if total_length < 512
+         @journals_left.push(j)
+      elsif total_length < 1028
+         @journals_right.push(j)
+      end
+
+      total_length = total_length + j.content.length
+
+    end
+
+  end
+
 end
