@@ -3,30 +3,31 @@
     <%= link_to "Back", controller: "home", action: "index" %>
   </div>
   <div id='content'>
-    <div id='left'>
-      <% @journals_left.each do |j| %>
-        <div class='notebook-divider'>
-          <div class='notebook-divider-line'>
-          </div>
-          <div class='notebook-divider-date'>
-            <%= j.month %>
-            <a>-</a>
-            <%= j.day %>
-          </div>
-        </div>
-        <div>
-          <%= j.content %>
-        </div>
+    <% @journals.each do |j| %>
+       <div class='journal-entry'>
+         <div class='notebook-divider'>
+           <div class='notebook-divider-line'>
+           </div>
+           <div class='notebook-divider-date'>
+             <%= j.month %>
+             <a>-</a>
+             <%= j.day %>
+           </div>
+         </div>
+         <div>
+           <%= j.content %>
+         </div>
+       </div>
       <% end %>
-      <% if @total_length < 720 %>
-        <div>
-          <div>
-            <hr>
-          </div>
-          <div>
-            <%= @current_journal.month %>
-            <a>-</a>
-            <%= @current_journal.day %>
+         <div>
+          <div class='notebook-divider'>
+            <div class='notebook-divider-line'>
+            </div>
+            <div class='notebook-divider-date'>
+              <%= @current_journal.month %>
+              <a>-</a>
+              <%= @current_journal.day %>
+            </div>
           </div>
         </div>
         <div id='current-journal-form-container'>
@@ -34,49 +35,9 @@
             <%= f.hidden_field :year %>
             <%= f.hidden_field :month %>
             <%= f.hidden_field :day %>
-            <%= f.text_area :content %>
+            <%= f.text_area :content, :id => 'journal-notebook-current-form'%>
             <%= f.submit %>
           <% end %>
         </div>
-      <% end %>
-    </div>
-    <div id='right'>
-      <% @journals_right.each do |j| %>
-        <div>
-          <div>
-            <hr>
-          </div>
-          <div>
-            <%= j.month %>
-            <a>-</a>
-            <%= j.day %>
-          </div>
-        </div>
-        <div>
-          <%= j.content %>
-        </div>
-      <% end %>
-      <% if @total_length >= 720 %>
-        <div>
-          <div>
-            <hr>
-          </div>
-          <div>
-            <%= @current_journal.month %>
-            <a>-</a>
-            <%= @current_journal.day %>
-          </div>
-        </div>
-        <div id='current-journal-form-container'>
-          <%= form_for(@current_journal, url: {controller: 'journals', action: 'create_or_update'}) do |f| %>
-            <%= f.hidden_field :year %>
-            <%= f.hidden_field :month %>
-            <%= f.hidden_field :day %>
-            <%= f.text_area :content %>
-            <%= f.submit %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
   </div>
 </div>

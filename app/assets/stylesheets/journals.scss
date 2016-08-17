@@ -34,30 +34,28 @@
   display: inline-block;
 }
 
-#journal-notebook-container > #content > #left {
-  vertical-align: top;
+#current-journal-form-container {
 
-  width: 420px;
-  height: 2000px;
-  display: inline-block;
-
-  margin: 20px;
 }
 
-#journal-notebook-container > #content > #right {
-  vertical-align: top;
+#journal-notebook-current-form {
+  border: 1px solid grey;
+  width: 100%;
+ 
+  resize: none;
 
-  width: 420px;
-  height: 2000px;
-  display: inline-block;
-
-
-  margin: 20px;
+  overflow: auto;
 }
 
 #journal-notebook-container > #content {
-  display: table;
+  column-count: 2;
+  column-gap: 40px;
+
   margin: 30px auto;
+
+  width: 900px;
+  height: 1300px;
 }
+
 
 // ---------------------
