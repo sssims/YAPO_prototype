@@ -9,20 +9,55 @@
 
 #journal-show-page-container {
 }
+// -----------------------
+//      NOTEBOOK PAGE 
+// -----------------------
 
-#journal-notebook-container > #content > #left {
+.notebook-divider {
+  margin-top: 15px;
+  overflow: hidden 
+}
+
+.notebook-divider-line {
+  width: 89%;
+  height: 1px;
+  margin-bottom: 5px;
+  background: grey;
+}
+
+.notebook-divider-date {
+   width: 10%;
+}
+
+.notebook-divider-line, .notebook-divider-date {
+  //float: right;
+  display: inline-block;
 }
 
 #journal-notebook-container > #content > #left {
-  width: 250px;
+  vertical-align: top;
+
+  width: 420px;
+  height: 2000px;
   display: inline-block;
 
   margin: 20px;
 }
 
 #journal-notebook-container > #content > #right {
-  width: 250px;
+  vertical-align: top;
+
+  width: 420px;
+  height: 2000px;
   display: inline-block;
+
 
   margin: 20px;
 }
+
+#journal-notebook-container > #content {
+  display: table;
+  margin: 30px auto;
+}
+
+// ---------------------

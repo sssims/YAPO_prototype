@@ -45,19 +45,29 @@ class JournalsController < ApplicationController
     @journals_left = Array.new
     @journals_right = Array.new
 
-    total_length = 0
+    @total_length = 0
 
     journals.each do |j|
 
-      if total_length < 512
+      if @total_length < 720
          @journals_left.push(j)
-      elsif total_length < 1028
+      elsif @total_length < 1440
          @journals_right.push(j)
       end
 
-      total_length = total_length + j.content.length
+      @total_length = @total_length + j.content.length
 
     end
+
+    if params[:id] != nil
+      @current_journal = Journal.find(params[:id]) 
+    else
+      @current_journal = Journal.new
+      @current_journal.year = params[:year]
+      @current_journal.month = params[:month]
+      @current_journal.day = params[:day]
+    end
+
 
   end
 

@@ -4,7 +4,7 @@ class NotesController < ApplicationController
 
     note_params = params[:note]
 
-    new_note = Note.new(user_id: session[:user_id], title: note_params[:title], content: note_params[:content], tags: "")
+    new_note = Note.new(user_id: session[:user_id], note_type: NotesHelper::NOTETYPE_DEFAULT, title: note_params[:title], content: note_params[:content], tags: "")
      
     new_note.save
 
