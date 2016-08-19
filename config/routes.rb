@@ -43,5 +43,6 @@ Rails.application.routes.draw do
   resource :notes
 
   get	'notes_complete' => 'notes#complete'
+  get	'journals_notebook' => 'journals#notebook'
 
 end

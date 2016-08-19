@@ -7,5 +7,53 @@
   height: 320px;
 }
 
-#journal-show-page-container {
+// -----------------------
+//      NOTEBOOK PAGE 
+// -----------------------
+
+.notebook-divider {
+  margin-top: 15px;
+  overflow: hidden;
 }
+
+.notebook-divider-line {
+  width: 89%;
+  height: 1px;
+  margin-bottom: 5px;
+  background: grey;
+}
+
+.notebook-divider-date {
+   width: 10%;
+}
+
+.notebook-divider-line, .notebook-divider-date {
+  //float: right;
+  display: inline-block;
+}
+
+#current-journal-form-container {
+
+}
+
+#journal-notebook-current-form {
+  border: 1px solid grey;
+  width: 100%;
+ 
+  resize: none;
+
+  overflow: auto;
+}
+
+#journal-notebook-container > #content {
+  column-count: 2;
+  column-gap: 40px;
+
+  margin: 30px auto;
+
+  width: 900px;
+  height: 1300px;
+}
+
+
+// ---------------------

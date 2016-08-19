@@ -38,4 +38,20 @@ class JournalsController < ApplicationController
 
   end
 
+  def notebook
+
+    @journals = Journal.where(user_id: session[:user_id]).order(:year, :month, :day).limit(10)
+
+    if params[:id] != nil
+      @current_journal = Journal.find(params[:id]) 
+    else
+      @current_journal = Journal.new
+      @current_journal.year = params[:year]
+      @current_journal.month = params[:month]
+      @current_journal.day = params[:day]
+    end
+
+
+  end
+
 end

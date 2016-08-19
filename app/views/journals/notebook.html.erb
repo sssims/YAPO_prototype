@@ -1,0 +1,43 @@
+<div id='journal-notebook-container'>
+  <div id='back-button'>
+    <%= link_to "Back", controller: "home", action: "index" %>
+  </div>
+  <div id='content'>
+    <% @journals.each do |j| %>
+       <div class='journal-entry'>
+         <div class='notebook-divider'>
+           <div class='notebook-divider-line'>
+           </div>
+           <div class='notebook-divider-date'>
+             <%= j.month %>
+             <a>-</a>
+             <%= j.day %>
+           </div>
+         </div>
+         <div>
+           <%= j.content %>
+         </div>
+       </div>
+      <% end %>
+         <div>
+          <div class='notebook-divider'>
+            <div class='notebook-divider-line'>
+            </div>
+            <div class='notebook-divider-date'>
+              <%= @current_journal.month %>
+              <a>-</a>
+              <%= @current_journal.day %>
+            </div>
+          </div>
+        </div>
+        <div id='current-journal-form-container'>
+          <%= form_for(@current_journal, url: {controller: 'journals', action: 'create_or_update'}) do |f| %>
+            <%= f.hidden_field :year %>
+            <%= f.hidden_field :month %>
+            <%= f.hidden_field :day %>
+            <%= f.text_area :content, :id => 'journal-notebook-current-form'%>
+            <%= f.submit %>
+          <% end %>
+        </div>
+  </div>
+</div>
