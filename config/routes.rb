@@ -43,6 +43,11 @@ Rails.application.routes.draw do
   resource :notes
 
   get	'notes_complete' => 'notes#complete'
+
   get	'journals_notebook' => 'journals#notebook'
+  get	'notes_notebook' => 'notes#notebook'
+  get	'notes_notebook_show' => 'notes#notebook_show'
+ 
+  patch 'notes_notebook_update' => 'notes#notebook_update'
 
 end

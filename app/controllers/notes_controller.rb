@@ -75,4 +75,41 @@ class NotesController < ApplicationController
 
   end
 
+  def notebook
+
+    @note = nil
+
+    show_id = params[:id]
+
+    if !show_id.nil?
+      @note = Note.find(show_id)
+    end
+
+    @notes = Note.where(user_id: session[:user_id])
+
+  end
+
+  def notebook_show
+    
+    @note = Note.find(params[:note_id])
+
+    render partial: "notebook_note_show", layout: false
+
+  end 
+
+  def notebook_update
+
+    note = params[:note]
+
+    note_record = Note.find(note[:id])
+
+    note_record.content = note[:content]
+    note_record.title = note[:title]
+
+    note_record.save
+ 
+    redirect_to :controller => 'notes', :action => 'notebook', :id => note[:id]
+
+  end 
+
 end

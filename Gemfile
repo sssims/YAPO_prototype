@@ -33,13 +33,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'bcrypt'
 
-gem 'pg'
-
 # Use Unicorn as the app server
 gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+
+  #gem 'pg'
+
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

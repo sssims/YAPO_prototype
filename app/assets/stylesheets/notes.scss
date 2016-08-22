@@ -20,3 +20,55 @@
   margin: 5px;
   padding: 5px;
 }
+
+// -----------------------
+// NOTEBOOK
+// -----------------------
+
+#notebook-back {
+  height: 30px;
+  width:  30px;
+ 
+  background-color: #FFF97B;
+}
+
+#notebook-content {
+  display: table;
+  margin: 50px auto;
+
+  width: 90%;
+}
+
+#notebook-navigation {
+  width: 20%;
+  height: 100%;
+}
+
+.nav-note-title {
+  color: black;
+  text-decoration: none;
+}
+
+#notebook-navigation, #notebook-show {
+  display: inline-block;
+}
+
+.notebook-column { 
+  display: inline-block;
+  margin: 40px;
+  background-color: #ABCDEF;
+  padding: 10px 15px;
+}
+
+#notebook-show {
+  width: 70%;
+}
+
+#notebook-content {
+  height: 1000px;
+}
+
+#notebook-show {
+  height: 100%;
+}
+// -----------------------

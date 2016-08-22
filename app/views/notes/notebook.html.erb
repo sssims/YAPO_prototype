@@ -1,0 +1,21 @@
+<div id='note-notebook-container'>
+  <div id='notebook-back'>
+    <a><%= '<--' %><a/>
+  </div>
+  <div id='notebook-content'> 
+    <div id='notebook-navigation'>
+      <div class='notebook-column'>
+        <% @notes.each do |n| %>
+          <div id='<%= n.id %>' class='nav-note-title'>
+            <%= n.title %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div id='notebook-show'>
+      <% if !@note.nil? %>
+        <%= render partial: "notebook_note_show", layout: false %>
+      <% end %>
+    </div>
+  </div>
+</div>
