@@ -1,8 +1,14 @@
 <div id='notebook-show-note'>
-  <%= form_for(@note, url: {controller: 'notes', action: 'notebook_update'}) do |f| %> 
+  <%= form_for(@note, url: {controller: 'notes', action: 'notebook_update'}, class: "notebook-edit-note") do |f| %> 
     <%= f.hidden_field :id %>
-    <%= f.text_field :title, class: "notebook-note-title" %>
-    <%= f.text_area :content, class: "notebook-note-content" %>
-    <%= f.submit class: "notebook-note-submit" %>
+    <div>
+      <%= f.text_field :title, class: "notebook-note-title" %>
+    </div>
+    <div class='notebook-note-content-div'>
+      <%= f.text_area :content, class: "notebook-note-content" %>
+    </div>
+    <div>
+      <%= f.submit "Save", class: "notebook-note-submit" %>
+    </div>
   <% end %> 
 </div>

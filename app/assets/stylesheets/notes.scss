@@ -25,6 +25,12 @@
 // NOTEBOOK
 // -----------------------
 
+#note-notebook-container {
+  height: 100%;
+  background-color: #EEEEEE;
+}
+
+
 #notebook-back {
   height: 30px;
   width:  30px;
@@ -39,18 +45,15 @@
   width: 90%;
 }
 
-#notebook-navigation {
-  width: 20%;
-  height: 100%;
-}
-
 .nav-note-title {
   color: black;
   text-decoration: none;
 }
 
-#notebook-navigation, #notebook-show {
-  display: inline-block;
+#notebook-navigation-container, #notebook-show-container {
+  display: table-cell;
+  vertical-align: top;
+  height: 100%;
 }
 
 .notebook-column { 
@@ -60,15 +63,63 @@
   padding: 10px 15px;
 }
 
-#notebook-show {
+#notebook-show-container {
   width: 70%;
 }
 
-#notebook-content {
-  height: 1000px;
+#notebook-navigation-container {
+  width: 20%;
 }
 
-#notebook-show {
+#notebook-show, #notebook-show-note {
+  width: 100%;
   height: 100%;
 }
+
+#notebook-content {
+  height: 100%;
+}
+
+// TODO: FIGURE OUT HOW TO PUT A CLASS ON A FORM,
+// OR SOMETHING, THEN, CHANGE THIS IDENTIFIER
+.edit_note {
+  height: 100%;
+}
+
+.notebook-note-content-div {
+  width: 100%;
+  height: 70%;
+}
+
+.notebook-note-content {  
+  height: 97%;
+  max-width: 500px;
+  width: 100%;
+}
+
+.notebook-note-title {
+  max-width: 500px;
+  width: 100%;
+
+  font-size: 16pt;
+}
+
+.notebook-note-content {
+  margin: 10px 0;
+}
+
+.notebook-note-title, .notebook-note-content, .notebook-note-submit {
+  text-decoration: none;
+  color: black;
+
+  padding: 3px;
+
+  border: none;
+}
+
+.notebook-note-submit {
+  border: 1px solid #ABCDEF;
+  background-color: white;
+}
+
 // -----------------------

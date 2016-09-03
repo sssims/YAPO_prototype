@@ -1,5 +1,23 @@
 Timeline:
 
+	Minimum Viable Product:
+
+	- Home Page
+	   - Styles
+	   - Notes partial
+	      - Tree format
+	      - 'Recent'
+	      - CRUD
+        - Notes Page
+	   - Tree format
+	   - 'Recent'
+   	   - CRUD
+	- Journal Page
+	- Task Page
+	- (Goals Page?)
+	- Settings / aux pages (login, logout, license, etc.)
+	- Link with Google Calendar
+
 	Phase I - complete
  
 	X - Application in functional state with showing, storing, and creating journals, tasks, and long term goals.

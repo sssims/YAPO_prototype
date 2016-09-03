@@ -15,3 +15,5 @@ $(document).on "click", ".nav-note-title", ->
        $('body').append "AJAX ERROR: #{textStatus}"
     success: (data, textStatus, jqXHR) ->
        $('#notebook-show').html("#{data}")
+
+

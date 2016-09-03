@@ -39,6 +39,9 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'react-rails'
+
 group :production do
 
   #gem 'pg'
