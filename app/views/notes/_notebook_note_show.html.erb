@@ -10,5 +10,6 @@
     <div>
       <%= f.submit "Save", class: "notebook-note-submit" %>
     </div>
+    <%= link_to "Delete", url: {controller: 'notes', action: 'notebook_destroy'}, id: @note.id, method: :get %>
   <% end %> 
 </div>

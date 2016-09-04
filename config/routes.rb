@@ -48,6 +48,12 @@ Rails.application.routes.draw do
   get	'notes_notebook' => 'notes#notebook'
   get	'notes_notebook_show' => 'notes#notebook_show'
  
+  get	'notes_notebook_new' => 'notes#notebook_new'
+
+  get 'notes_notebook_update' => 'notes#notebook_update'
   patch 'notes_notebook_update' => 'notes#notebook_update'
+  post 'notes_notebook_update' => 'notes#notebook_update'
+
+  delete 'notes_notebook_destroy' => 'notes#notebook_destroy'
 
 end

@@ -16,4 +16,13 @@ $(document).on "click", ".nav-note-title", ->
     success: (data, textStatus, jqXHR) ->
        $('#notebook-show').html("#{data}")
 
+$(document).on "click", ".notebook-add-note-button", ->
+  $.ajax '/notes_notebook_new',
+    type: 'GET'
+    dataType: 'html'
+    data: { }
+    error: (jqXHR, textStatus, errorThrown) ->
+       $('body').append "AJAX ERROR: #{textStatus}"
+    success: (data, textStatus, jqXHR) ->
+       $('#notebook-show').html("#{data}")
 

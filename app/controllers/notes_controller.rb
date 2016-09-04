@@ -69,6 +69,14 @@ class NotesController < ApplicationController
 
   end
 
+  def notebook_destroy
+
+    binding.pry
+
+    redirect_to :controller => 'notes', :action => 'notebook'
+
+  end
+
   def complete
  
     @note = Note.find(params[:id])
@@ -101,15 +109,31 @@ class NotesController < ApplicationController
 
     note = params[:note]
 
-    note_record = Note.find(note[:id])
+    if note[:id].is_a? Numeric
+ 
+      note_record = Note.find(note[:id])
+
+    else
+
+      note_record = Note.new(user_id: session[:user_id], note_type: NotesHelper::NOTETYPE_DEFAULT, :title => note[:title], :content => note[:content])
+ 
+    end
 
     note_record.content = note[:content]
     note_record.title = note[:title]
 
     note_record.save
  
-    redirect_to :controller => 'notes', :action => 'notebook', :id => note[:id]
+    redirect_to :controller => 'notes', :action => 'notebook', :id => note_record.id
 
   end 
+
+  def notebook_new
+
+    @note = Note.new(user_id: session[:user_id], note_type: NotesHelper::NOTETYPE_DEFAULT)
+
+    render partial: "notebook_note_show", layout: false
+
+  end
 
 end
